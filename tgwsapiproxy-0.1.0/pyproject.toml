@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tgwsapiproxy"
+version = "0.1.0"
+description = "Локальный SOCKS5/HTTP-прокси через Cloudflare Worker — доступ к Telegram Bot API из РФ без VPN"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+keywords = ["telegram", "bot", "proxy", "socks5", "cloudflare", "workers", "russia"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: Proxy Servers",
+    "Topic :: Communications :: Chat",
+]
+# Зависимостей нет намеренно: PyPI бывает недоступен из РФ,
+# а ставить пакет из-под блокировки невозможно. Весь код на stdlib.
+dependencies = []
+
+[project.optional-dependencies]
+aiogram = ["aiogram>=3.0", "aiohttp-socks>=0.8"]
+ptb = ["python-telegram-bot>=20", "httpx[socks]>=0.27"]
+
+[project.scripts]
+tgwsapiproxy = "tgwsapiproxy.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/winchanii/TgWsApiProxy"
+Issues = "https://github.com/winchanii/TgWsApiProxy/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tgwsapiproxy"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/tgwsapiproxy", "README.md", "LICENSE", "worker.js"]
