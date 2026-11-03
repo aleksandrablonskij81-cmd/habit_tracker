@@ -13,3 +13,4 @@ requests==2.34.2
 tgwsapiproxy==0.1.0
 gunicorn
 coverage
+packaging
