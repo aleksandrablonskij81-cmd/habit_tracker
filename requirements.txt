@@ -1,0 +1,15 @@
+Django==6.0.9
+djangorestframework==3.18.3
+djangorestframework_simplejwt==5.5.1
+drf-spectacular==0.30.0
+django-cors-headers==4.9.0
+django-filter==26.2
+django-celery-beat==2.9.0
+celery==5.6.3
+redis==8.1.0
+psycopg2-binary==2.9.13
+python-dotenv==1.2.4
+requests==2.34.2
+tgwsapiproxy==0.1.0
+gunicorn
+coverage
