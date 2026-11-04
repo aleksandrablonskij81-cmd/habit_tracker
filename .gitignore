@@ -1,0 +1,56 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# ===== Виртуальное окружение =====
+.venv/
+venv/
+env/
+ENV/
+
+# ===== Django =====
+*.log
+db.sqlite3
+db.sqlite3-journal
+/media/
+/staticfiles/
+local_settings.py
+
+# ===== Переменные окружения =====
+.env
+.env.local
+.env.*.local
+
+# ===== Celery =====
+celerybeat-schedule
+celerybeat-schedule-shm
+celerybeat-schedule-wal
+
+# ===== Docker =====
+*.pid
+*.seed
+*.pid.lock
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Тесты =====
+.coverage
+htmlcov/
+.pytest_cache/
+.env.docker
